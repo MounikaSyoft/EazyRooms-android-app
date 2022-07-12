@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".chat.model.ChatWindowActivity"
+        android:background="@color/bg">
+
+        <LinearLayout
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:orientation="horizontal"
+            android:id="@+id/topBarLytChat"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:gravity="center_vertical"
+            android:background="@color/white">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:layout_width="wrap_content"
+                android:layout_marginStart="10dp"
+                android:id="@+id/imgBack"
+                android:visibility="visible"
+                android:padding="2dp"
+                android:src="@drawable/ic_back_arrow"
+                android:layout_height="wrap_content"/>
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/imgUser"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="15dp"
+                android:src="@drawable/chat_profile"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvuserName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="Name"
+                android:textColor="@color/_333333"
+                android:textSize="22sp"
+                app:layout_constraintStart_toEndOf="@id/imgBack"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvChatData"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@id/layoutChatEnter"
+            tools:listitem="@layout/chat_window_cell"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/topBarLytChat"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginTop="15dp"
+            android:layout_height="0dp">
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:layout_marginBottom="12dp"
+            android:layout_marginHorizontal="8dp"
+            android:orientation="horizontal"
+            android:background="@drawable/bg_white_round"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/layoutChatEnter"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="0dp"
+            android:paddingVertical="5dp"
+            android:paddingHorizontal="11dp"
+            android:layout_height="45dp">
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/imgSpeak"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="15dp"
+                android:src="@drawable/ic_speak"/>
+            <EditText
+                android:id="@+id/chatEtSearch"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="@font/roboto_regular"
+                android:background="@null"
+                android:hint="Type Something.............."
+                android:textSize="14sp"
+                android:paddingHorizontal="8dp" />
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/imgSmile"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginStart="15dp"
+                android:src="@drawable/ic_smiley"
+                />
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/imgAttach"
+                android:layout_width="17dp"
+                android:layout_height="18dp"
+                android:layout_marginStart="15dp"
+                android:src="@drawable/ic_attachment"
+                />
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/imgSend"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="15dp"
+                android:src="@drawable/ic_send"
+                />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">EazyRooms</string>
+
+    <string name="login_txt">with your phone number</string>
+    <string name="sign_in">Sign In</string>
+    <string name="otp">OTP Verification</string>
+    <string name="otp_txt1">An authentication code has been sent to</string>
+    <string name="otp_txt2">(+800) 111 222 333</string>
+    <string name="otp_txt3">Resend Code</string>
+    <string name="details_sugg">I have extensive experience in procurement dunction in automotive and packaging business.</string>
+    <string name="see">See More</string>
+    <string name="email">your email website.com</string>
+    <string name="address">Iris Watson P.O Box 283 8562 Rd.Frederick Nebraska</string>
+    <string name="orders">Orders</string>
+    <string name="order_details">Order Details</string>
+    <string name="profile_details">Profile Details</string>
+    <string name="chat">Chats</string>
+    <string name="phone">Phone Verification</string>
+    <string name="type_phone">phone</string>
+    <string name="CHECK_INTERNET">Please check your internet connection.</string>
+
+</resources>

@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".orders.OrdersListActivity"
+        android:background="@color/bg">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginTop="20dp">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tvName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Name"
+                            android:fontFamily="@font/roboto_bold"
+                            android:textSize="20sp"
+                            android:textColor="@color/black"
+                            android:layout_marginStart="20dp" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tvStaffName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="xxxxxxxxxxxxx"
+                            android:fontFamily="@font/roboto_regular"
+                            android:textSize="20sp"
+                            android:layout_marginStart="20dp" />
+                    </TableRow>
+
+                </TableLayout>
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginTop="20dp">
+
+                    <Switch
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="30dp"
+                        android:enabled="true"/>
+
+                </TableLayout>
+
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/bg"
+                tools:context=".orders.OrderStatusActivity">
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="0dp"
+                    android:orientation="horizontal"
+                    tools:listitem="@layout/status_title_cell"
+                    android:background="@color/white"
+                    android:layout_marginTop="6dp"
+                    android:id="@+id/rvOrderTitle"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:layout_height="wrap_content" />
+
+                <View
+                    app:layout_constraintEnd_toEndOf="@id/rvOrderTitle"
+                    app:layout_constraintStart_toStartOf="@id/rvOrderTitle"
+                    app:layout_constraintTop_toBottomOf="@id/rvOrderTitle"
+                    android:id="@+id/viewSepOrders"
+                    android:layout_marginTop="-1dp"
+                    android:layout_width="0dp"
+                    android:background="#CFCFCF"
+                    android:layout_height="1dp" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.core.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp">
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TableRow
+                            android:id="@+id/trRequest"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:background="@drawable/order_bg"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginBottom="15dp">
+
+                            <ImageView
+                                android:layout_width="45dp"
+                                android:layout_height="45dp"
+                                android:layout_marginStart="20dp"
+                                android:src="@drawable/order_request" />
+
+                            <TextView
+                                android:id="@+id/tvRequest"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Requests"
+                                android:textColor="@color/_242A37"
+                                android:textSize="18sp"
+                                android:fontFamily="@font/roboto_medium"
+                                android:layout_marginStart="30dp" />
+
+                           <!-- <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/ic_request_circle"
+                                android:gravity="center"
+                                android:layout_gravity="right|center_vertical">-->
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="1"
+                                    android:background="@drawable/ic_request_circle"
+                                    android:fontFamily="@font/roboto_medium"
+                                    android:textColor="@color/black"
+                                    android:textSize="14sp"
+                                    android:gravity="center"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="25dp"/>
+
+                          <!--  </LinearLayout>-->
+
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/trIssues"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:background="@drawable/order_bg"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginBottom="15dp">
+
+                            <ImageView
+                                android:layout_width="45dp"
+                                android:layout_height="45dp"
+                                android:layout_marginStart="20dp"
+                                android:src="@drawable/order_issues" />
+
+                            <TextView
+                                android:id="@+id/tvIssues"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Issues"
+                                android:textColor="@color/_242A37"
+                                android:textSize="18sp"
+                                android:fontFamily="@font/roboto_medium"
+                                android:layout_marginStart="30dp" />
+
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/trDining"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:background="@drawable/order_bg"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginBottom="15dp">
+
+                            <ImageView
+                                android:layout_width="45dp"
+                                android:layout_height="45dp"
+                                android:layout_marginStart="20dp"
+                                android:src="@drawable/order_room" />
+
+                            <TextView
+                                android:id="@+id/tvDining"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Room Dining"
+                                android:textColor="@color/_242A37"
+                                android:textSize="18sp"
+                                android:fontFamily="@font/roboto_medium"
+                                android:layout_marginStart="30dp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="4"
+                                android:background="@drawable/ic_request_circle"
+                                android:fontFamily="@font/roboto_medium"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:gravity="center"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="25dp"/>
+
+
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/trWifi"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:background="@drawable/order_bg"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginBottom="15dp">
+
+                            <ImageView
+                                android:layout_width="45dp"
+                                android:layout_height="45dp"
+                                android:layout_marginStart="20dp"
+                                android:src="@drawable/order_wifi" />
+
+                            <TextView
+                                android:id="@+id/tvWifi"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Wifi Password"
+                                android:textColor="@color/_242A37"
+                                android:textSize="18sp"
+                                android:fontFamily="@font/roboto_medium"
+                                android:layout_marginStart="30dp" />
+
+
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/trCheckout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:background="@drawable/order_bg"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginBottom="15dp">
+
+                            <ImageView
+                                android:layout_width="45dp"
+                                android:layout_height="45dp"
+                                android:layout_marginStart="20dp"
+                                android:src="@drawable/order_checkout" />
+
+                            <TextView
+                                android:id="@+id/tvCheckOut"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Last Checkout"
+                                android:textColor="@color/_242A37"
+                                android:textSize="18sp"
+                                android:fontFamily="@font/roboto_medium"
+                                android:layout_marginStart="30dp" />
+
+
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/trCheckin"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:background="@drawable/order_bg"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginBottom="15dp">
+
+                            <ImageView
+                                android:layout_width="45dp"
+                                android:layout_height="45dp"
+                                android:layout_marginStart="20dp"
+                                android:src="@drawable/order_checkin" />
+
+                            <TextView
+                                android:id="@+id/tvCheckIn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Checkin Checkout"
+                                android:textColor="@color/_242A37"
+                                android:textSize="18sp"
+                                android:fontFamily="@font/roboto_medium"
+                                android:layout_marginStart="30dp" />
+
+
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/trSpa"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:background="@drawable/order_bg"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginBottom="15dp">
+
+                            <ImageView
+                                android:layout_width="45dp"
+                                android:layout_height="45dp"
+                                android:layout_marginStart="20dp"
+                                android:src="@drawable/order_spa" />
+
+                            <TextView
+                                android:id="@+id/tvSpa"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Spa Booking"
+                                android:textColor="@color/_242A37"
+                                android:textSize="18sp"
+                                android:fontFamily="@font/roboto_medium"
+                                android:layout_marginStart="30dp" />
+
+
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/trLaundry"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:background="@drawable/order_bg"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginBottom="15dp">
+
+                            <ImageView
+                                android:layout_width="45dp"
+                                android:layout_height="45dp"
+                                android:layout_marginStart="20dp"
+                                android:src="@drawable/order_laundry" />
+
+                            <TextView
+                                android:id="@+id/tvLaundry"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Laundry Request"
+                                android:textColor="@color/_242A37"
+                                android:textSize="18sp"
+                                android:fontFamily="@font/roboto_medium"
+                                android:layout_marginStart="30dp" />
+
+
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/trTravel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:background="@drawable/order_bg"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginBottom="15dp">
+
+                            <ImageView
+                                android:layout_width="45dp"
+                                android:layout_height="45dp"
+                                android:layout_marginStart="20dp"
+                                android:src="@drawable/order_travel" />
+
+                            <TextView
+                                android:id="@+id/tvTravel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Travel Desk"
+                                android:textColor="@color/_242A37"
+                                android:textSize="18sp"
+                                android:fontFamily="@font/roboto_medium"
+                                android:layout_marginStart="30dp" />
+
+
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/trParking"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:background="@drawable/order_bg"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginBottom="15dp">
+
+                            <ImageView
+                                android:layout_width="45dp"
+                                android:layout_height="45dp"
+                                android:layout_marginStart="20dp"
+                                android:src="@drawable/order_parking" />
+
+                            <TextView
+                                android:id="@+id/tvParking"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Wallet Parking"
+                                android:textColor="@color/_242A37"
+                                android:textSize="18sp"
+                                android:fontFamily="@font/roboto_medium"
+                                android:layout_marginStart="30dp" />
+
+
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/trTask"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:background="@drawable/order_bg"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginBottom="15dp">
+
+                            <ImageView
+                                android:layout_width="45dp"
+                                android:layout_height="45dp"
+                                android:layout_marginStart="20dp"
+                                android:src="@drawable/order_task" />
+
+                            <TextView
+                                android:id="@+id/tvTask"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Task"
+                                android:textColor="@color/_242A37"
+                                android:textSize="18sp"
+                                android:fontFamily="@font/roboto_medium"
+                                android:layout_marginStart="30dp" />
+
+                        </TableRow>
+
+                    </TableLayout>
+                </androidx.core.widget.NestedScrollView>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>

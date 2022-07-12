@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/customToastLayout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="20dp"
+    android:padding="5dp"
+    android:gravity="center_vertical"
+    android:background="@color/_BD362F">
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="5dp"
+        android:background="@drawable/bg_white_round"
+        android:padding="5dp"
+        android:src="@drawable/cross_red" />
+
+    <TextView
+        android:id="@+id/tvShowToast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_regular"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="8dp"
+        android:text="Add to Favirote"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</LinearLayout>

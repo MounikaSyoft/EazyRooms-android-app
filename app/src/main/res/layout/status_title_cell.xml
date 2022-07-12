@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutStatusTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="15dp">
+
+        <LinearLayout
+            android:id="@+id/statusLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            tools:ignore="MissingConstraints">
+            <TextView
+                android:id="@+id/tvStatusTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:paddingVertical="15dp"
+                android:text="My Orders"
+                android:textColor="@color/_002AB3"
+                android:textSize="19sp"/>
+
+            <TextView
+                android:id="@+id/tvCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:text="(3)"
+                android:textColor="@color/_002AB3"
+                android:textSize="19sp"
+                android:layout_marginLeft="5dp"/>
+        </LinearLayout>
+
+        <View
+            android:id="@+id/viewSep"
+            android:layout_width="0dp"
+            android:layout_height="4dp"
+            android:background="@color/_002AB3"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@id/statusLayout"
+            app:layout_constraintStart_toStartOf="@id/statusLayout"
+            app:layout_constraintTop_toBottomOf="@id/statusLayout" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

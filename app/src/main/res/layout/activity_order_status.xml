@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg"
+        tools:context=".orders.OrderStatusActivity">
+
+       <!-- <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="0dp"
+            android:orientation="horizontal"
+            tools:listitem="@layout/status_title_cell"
+            android:background="@color/white"
+            android:layout_marginTop="6dp"
+            android:id="@+id/rvOrderTitle"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:layout_height="wrap_content" />
+
+        <View
+            app:layout_constraintEnd_toEndOf="@id/rvOrderTitle"
+            app:layout_constraintStart_toStartOf="@id/rvOrderTitle"
+            app:layout_constraintTop_toBottomOf="@id/rvOrderTitle"
+            android:id="@+id/viewSepOrders"
+            android:layout_marginTop="-1dp"
+            android:layout_width="0dp"
+            android:background="#CFCFCF"
+            android:layout_height="1dp" />-->
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            tools:listitem="@layout/status_list_cell"
+            android:layout_marginHorizontal="10dp"
+            android:id="@+id/rvOrderData"
+            android:clipToPadding="false"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:layout_height="0dp"
+            tools:ignore="MissingConstraints" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
